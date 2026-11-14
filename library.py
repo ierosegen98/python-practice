@@ -53,7 +53,9 @@ def show_library(library: dict[str, list[str]]) -> None:
 def find_author_with_most_books(
     library: dict[str, list[str]],
 ) -> str | None:
-    """Возвращает имя автора с наибольшим количеством книг. Если библиотека пуста, возвращает None."""
+    """Возвращает имя автора с наибольшим количеством книг.
+    Если библиотека пуста, возвращает None.
+    """
     return max(library, key=lambda author: len(library[author]), default=None)
 
 

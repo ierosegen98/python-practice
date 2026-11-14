@@ -4,12 +4,14 @@
 def process_matrix(
     matrix: list[list[int]],
 ) -> tuple[bool, list[list[int | None]] | None]:
-    """Проверяет матрицу на квадратность и преобразует чётные элементы квадратной матрицы в None."""
+    """Проверяет матрицу на квадратность и преобразует чётные элементы
+    квадратной матрицы в None.
+    """
     if any(len(row) != len(matrix) for row in matrix):
         return False, None
     new_matrix = []
     for row in matrix:
-        new_row = [value if value % 2 != 0 else None for value in row]
+        new_row = [value if value % 2 else None for value in row]
         new_matrix.append(new_row)
     return True, new_matrix
 
